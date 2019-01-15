@@ -6,7 +6,7 @@ setup(
     version='0.4.7',
     install_requires=['feedparser'],
     description='A command-line podcast aggregator',
-    author='Manolo Martínez',
+    author='Manolo Martinez',
     author_email='manolo@austrohungaro.com',
     url='https://github.com/manolomartinez/greg',
     packages=['greg'],
