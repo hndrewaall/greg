@@ -198,6 +198,7 @@ def tag(placeholders):
             stagger.util.set_frames(podpath, {tag: metadata})
         else:
             stagger.util.remove_frames(podpath, tag)
+    stagger.util.set_frames(podpath, {"TRCK": placeholders.track})
 
 
 def filtercond(placeholders):

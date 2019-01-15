@@ -273,7 +273,7 @@ class Feed():
         # the input that parse_for_download expects
         return aux.parse_for_download(mimedict)
 
-    def download_entry(self, entry):
+    def download_entry(self, entry, track):
         """
         Find entry link and download entry
         """
@@ -324,6 +324,7 @@ class Feed():
                         sanitizedsummary)
                     placeholders = aux.check_directory(placeholders)
                     condition = aux.filtercond(placeholders)
+                    placeholders.track = str(track)
                     if condition:
                         print("Downloading {} -- {}".format(title, podname))
                         aux.download_handler(self, placeholders)

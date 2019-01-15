@@ -171,9 +171,9 @@ def sync(args):
             if stop >= len(entries_to_download):
                 entries_to_download.sort(key=operator.attrgetter("linkdate"),
                                          reverse=False)
-            for entry in entries_to_download:
+            for track, entry in enumerate(entries_to_download, 1):
                 if entry.linkdate > currentdate:
-                    downloaded = feed.download_entry(entry)
+                    downloaded = feed.download_entry(entry, track)
                     entrycounter += downloaded
                 if entrycounter >= stop:
                     break
